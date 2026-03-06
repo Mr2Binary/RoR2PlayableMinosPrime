@@ -96,7 +96,7 @@ namespace MinosMod.Survivors.Minos
             bombImpactExplosion.timerAfterImpact = true;
             bombImpactExplosion.lifetimeAfterImpact = 1f;
 
-            Debug.Log("MinosMod: Snake Projectile initialized using LunarNeedle base.");
+            Debug.Log("MinosMod: Snake Projectile initialized using DaggerProjectile base.");
 
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
 
