@@ -793,31 +793,37 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Emote.playbackRate
     m_Type: 1
-    m_DefaultFloat: 3
+    m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Punch.playbackRate
     m_Type: 1
-    m_DefaultFloat: 3
+    m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: ShootGun.playbackRate
     m_Type: 1
-    m_DefaultFloat: 3
+    m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: ThrowBomb.playbackRate
     m_Type: 1
-    m_DefaultFloat: 3
+    m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Dropkick.playbackRate
     m_Type: 1
     m_DefaultFloat: 4.5
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Kick.playbackRate
+    m_Type: 1
+    m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}

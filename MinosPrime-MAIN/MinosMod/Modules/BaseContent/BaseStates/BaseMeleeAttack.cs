@@ -50,8 +50,18 @@ namespace MinosMod.Modules.BaseStates
         private HitStopCachedState hitStopCachedState;
         private Vector3 storedVelocity;
 
+        public static float lastAttackTime;
+
         public override void OnEnter()
         {
+            //this is for combo logic
+            if (Time.time - lastAttackTime > 3f)
+            {
+                swingIndex = 0; //resets swing index if its been more than 3 seconds since last attack
+                Debug.Log("PlayableMinosPrime: DEBUG: Resetting swing index to 0. 3 seconds have passed.");
+            }
+            lastAttackTime = Time.time;
+
             base.OnEnter();
             duration = baseDuration / attackSpeedStat;
             animator = GetModelAnimator();
@@ -83,7 +93,7 @@ namespace MinosMod.Modules.BaseStates
 
         protected virtual void PlayAttackAnimation()
         {
-            PlayCrossfade("Combat, Override", "Box1" + (1 + swingIndex), playbackRateParam, duration, 0.05f);
+            PlayCrossfade("Combat, Override", "Box" + (1 + swingIndex), playbackRateParam, duration, 0.05f);
         }
 
         public override void OnExit()

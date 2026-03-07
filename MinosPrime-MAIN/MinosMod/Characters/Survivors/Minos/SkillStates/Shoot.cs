@@ -1,4 +1,6 @@
-﻿using EntityStates;
+﻿//THIS IS NOW UNUSED. THIS IS FROM THE HENRY TEMPLATE FOR HIS PISTOL
+
+using EntityStates;
 using MinosMod.Survivors.Minos;
 using RoR2;
 using UnityEngine;

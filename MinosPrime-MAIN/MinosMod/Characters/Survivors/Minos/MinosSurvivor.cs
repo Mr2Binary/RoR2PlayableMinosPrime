@@ -232,48 +232,30 @@ namespace MinosMod.Survivors.Minos
                     true
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            primarySkillDef1.stepCount = 4;
+            primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);
         }
 
+        //replaced SecondarySkill with KickCombo instead of Shoot.cs. said file is now unused.
         private void AddSecondarySkills()
         {
             Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, SkillSlot.Secondary);
 
-            //here is a basic skill def with all fields accounted for
-            SkillDef secondarySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
-            {
-                skillName = "MinosGun",
-                skillNameToken = MINOS_PREFIX + "SECONDARYNAME",
-                skillDescriptionToken = MINOS_PREFIX + "SECONDARYDESC",
-                keywordTokens = new string[] { "KEYWORD_AGILE" },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
-
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
-                activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.Skill,
-
-                baseRechargeInterval = 1f,
-                baseMaxStock = 1,
-
-                rechargeStock = 1,
-                requiredStock = 1,
-                stockToConsume = 1,
-
-                resetCooldownTimerOnUse = false,
-                fullRestockOnAssign = true,
-                dontAllowPastMaxStocks = false,
-                mustKeyPress = false,
-                beginSkillCooldownOnSkillEnd = false,
-
-                isCombatSkill = true,
-                canceledFromSprinting = false,
-                cancelSprintingOnActivation = false,
-                forceSprintDuringState = false,
-
-            });
+            SteppedSkillDef secondarySkillDef1 = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+                (
+                    "MinosKick",
+                    MINOS_PREFIX + "SECONDARYNAME",
+                    MINOS_PREFIX + "SECONDARYDESC",
+                    assetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
+                    new EntityStates.SerializableEntityStateType(typeof(SkillStates.KickCombo)),
+                    "Weapon2",
+                    true
+                ));
+            //custom Skilldefs can have additional fields that you can set manually
+            secondarySkillDef1.stepCount = 2;
+            secondarySkillDef1.stepGraceDuration = 0.5f;
 
             Skills.AddSecondarySkills(bodyPrefab, secondarySkillDef1);
         }

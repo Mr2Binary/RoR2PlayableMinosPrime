@@ -14,8 +14,8 @@ namespace MinosMod.Modules.BaseStates
 
         //static vars will persist across all instances of this state.
         protected static int comboIndex = 0;
-        protected static float lastAttackTime;
         protected float comboResetTime = 3f; //combo resets after float seconds of not attacking.
+        protected static float lastAttackTime;
 
         protected float duration;
         protected float baseDuration = 1.0f;

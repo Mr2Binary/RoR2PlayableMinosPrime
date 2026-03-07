@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace MinosMod.Survivors.Minos.SkillStates
 {
-    public class PunchCombo : BaseMeleeAttack
+    public class KickCombo : BaseMeleeAttack
     {
         public override void  OnEnter()
         {
-            hitboxGroupName = "PunchGroup";
+            hitboxGroupName = "KickGroup";
 
             damageType = DamageTypeCombo.GenericPrimary;
             damageCoefficient = MinosStaticValues.punchDamageCoefficient;
@@ -17,12 +17,9 @@ namespace MinosMod.Survivors.Minos.SkillStates
             bonusForce = Vector3.zero;
             baseDuration = 1f;
 
-            //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
-            //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
             attackStartPercentTime = 0.2f;
             attackEndPercentTime = 0.4f;
 
-            //this is the point at which the attack can be interrupted by itself, continuing a combo
             earlyExitPercentTime = 0.6f;
 
             hitStopDuration = 0.012f;
@@ -32,18 +29,18 @@ namespace MinosMod.Survivors.Minos.SkillStates
             swingSoundString = "";
             hitSoundString = "";
             muzzleString = "";
-            playbackRateParam = "Punch.playbackRate";
-            swingEffectPrefab = MinosAssets.swordSwingEffect;
-            hitEffectPrefab = MinosAssets.swordHitImpactEffect;
+            playbackRateParam = "Kick.playbackRate";
+            swingEffectPrefab = MinosAssets.swordSwingEffect; //TODO: change
+            hitEffectPrefab = MinosAssets.swordHitImpactEffect; //TODO: change
 
-            impactSound = MinosAssets.swordHitSoundEvent.index;
+            impactSound = MinosAssets.swordHitSoundEvent.index; //TODO: change
 
             base.OnEnter();
         }
 
         protected override void PlayAttackAnimation()
         {
-            string animationName = "Box" + (swingIndex + 1); //cycles thru animations Box1, 2 and 3
+            string animationName = "Kick" + (swingIndex + 1); //cycles thru animations Kick1 and 2
 
             PlayCrossfade("Combat, Override", animationName, playbackRateParam, duration, 0.05f);
 
