@@ -51,9 +51,12 @@ namespace MinosMod.Modules.BaseStates
         private Vector3 storedVelocity;
 
         public static float lastAttackTime;
+        protected bool hasBlinked = false;
 
         public override void OnEnter()
         {
+            hasBlinked = false; //init for blink delay on first attack of combo
+            this.baseDuration = 1f;
             //this is for combo logic
             if (Time.time - lastAttackTime > 3f)
             {
@@ -95,9 +98,12 @@ namespace MinosMod.Modules.BaseStates
         {
             if (base.isAuthority && base.characterMotor && base.characterDirection)
             {
-                Vector3 blinkVelocity = base.characterDirection.forward * speedMultiplier;
+                base.characterMotor.velocity = Vector3.zero; //reset velocity to zero
 
+                Vector3 blinkVelocity = base.characterDirection.forward * speedMultiplier;
+                
                 base.characterMotor.velocity += blinkVelocity;
+                //this will continue on FixedUpdate();
             }
         }
 
@@ -175,7 +181,26 @@ namespace MinosMod.Modules.BaseStates
 
         public override void FixedUpdate()
         {
+
             base.FixedUpdate();
+
+            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.45f : 0.05f; //45 -> % of the animation to start blink
+            float brakeTimePercent = blinkStartTimePercent + 0.15f;
+
+            if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)
+            {
+                Blink(70f);
+                hasBlinked = true;
+            }
+
+            //continuation of blinking logic to brake
+            if (hasBlinked && stopwatch >= this.duration * brakeTimePercent)
+            {
+                if (base.isAuthority && base.characterMotor)
+                {
+                    base.characterMotor.velocity = Vector3.zero;
+                }
+            }
 
             hitPauseTimer -= Time.deltaTime;
 

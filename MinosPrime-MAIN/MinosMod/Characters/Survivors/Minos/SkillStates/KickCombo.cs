@@ -20,7 +20,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             attackStartPercentTime = 0.2f;
             attackEndPercentTime = 0.4f;
 
-            earlyExitPercentTime = 0.9f;
+            earlyExitPercentTime = 1f;
 
             hitStopDuration = 0.012f;
             attackRecoil = 0.5f;
@@ -36,7 +36,6 @@ namespace MinosMod.Survivors.Minos.SkillStates
             impactSound = MinosAssets.swordHitSoundEvent.index; //TODO: change
 
             base.OnEnter();
-            Blink(100f); //prepare thyself skdoosh
         }
 
         protected override void PlayAttackAnimation()
