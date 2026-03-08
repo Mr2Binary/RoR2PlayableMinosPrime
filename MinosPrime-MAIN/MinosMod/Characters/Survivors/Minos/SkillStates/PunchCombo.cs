@@ -23,7 +23,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             attackEndPercentTime = 0.4f;
 
             //this is the point at which the attack can be interrupted by itself, continuing a combo
-            earlyExitPercentTime = 0.6f;
+            earlyExitPercentTime = 0.9f;
 
             hitStopDuration = 0.012f;
             attackRecoil = 0.5f;
@@ -39,6 +39,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             impactSound = MinosAssets.swordHitSoundEvent.index;
 
             base.OnEnter();
+            Blink(100f); //thy end is now skdoosh
         }
 
         protected override void PlayAttackAnimation()

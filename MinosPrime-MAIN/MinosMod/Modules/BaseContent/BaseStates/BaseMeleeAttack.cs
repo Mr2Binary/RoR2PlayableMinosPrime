@@ -91,6 +91,17 @@ namespace MinosMod.Modules.BaseStates
 
         }
 
+        protected void Blink(float speedMultiplier) //the blink Minos does before attacking.
+        {
+            if (base.isAuthority && base.characterMotor && base.characterDirection)
+            {
+                Vector3 blinkVelocity = base.characterDirection.forward * speedMultiplier;
+
+                base.characterMotor.velocity += blinkVelocity;
+            }
+        }
+
+        //base superclass for Skill1 and 2 animations
         protected virtual void PlayAttackAnimation()
         {
             PlayCrossfade("Combat, Override", "Box" + (1 + swingIndex), playbackRateParam, duration, 0.05f);

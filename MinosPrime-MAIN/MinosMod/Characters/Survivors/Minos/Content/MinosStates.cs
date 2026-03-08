@@ -8,7 +8,7 @@ namespace MinosMod.Survivors.Minos
         {
             Modules.Content.AddEntityState(typeof(PunchCombo));
 
-            Modules.Content.AddEntityState(typeof(Shoot));
+            Modules.Content.AddEntityState(typeof(KickCombo));
 
             Modules.Content.AddEntityState(typeof(Roll));
 
