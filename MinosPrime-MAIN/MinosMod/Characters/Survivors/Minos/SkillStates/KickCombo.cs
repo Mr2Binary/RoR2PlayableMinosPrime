@@ -35,6 +35,11 @@ namespace MinosMod.Survivors.Minos.SkillStates
 
             impactSound = MinosAssets.swordHitSoundEvent.index; //TODO: change
 
+            if (this.swingIndex == 2)
+            {
+                this.outer.SetNextState(new SkillStates.ThrowBomb());
+            }
+
             base.OnEnter();
         }
 

@@ -58,10 +58,10 @@ namespace MinosMod.Modules.BaseStates
             hasBlinked = false; //init for blink delay on first attack of combo
             this.baseDuration = 1f;
             //this is for combo logic
-            if (Time.time - lastAttackTime > 3f)
+            if (Time.time - lastAttackTime > 5f)
             {
-                swingIndex = 0; //resets swing index if its been more than 3 seconds since last attack
-                Debug.Log("PlayableMinosPrime: DEBUG: Resetting swing index to 0. 3 seconds have passed.");
+                swingIndex = 0; //resets swing index if its been more than 5 seconds since last attack
+                Debug.Log("PlayableMinosPrime: DEBUG: Resetting swing index to 0. 5 seconds have passed.");
             }
             lastAttackTime = Time.time;
 
@@ -184,7 +184,8 @@ namespace MinosMod.Modules.BaseStates
 
             base.FixedUpdate();
 
-            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.45f : 0.05f; //45 -> % of the animation to start blink
+            //This is the logic for Minos's blink before attacking. The first attack of the combo has longer delay to play voicelines and be consistent with the animation.
+            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //45 -> % of the animation to start blink
             float brakeTimePercent = blinkStartTimePercent + 0.15f;
 
             if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)
@@ -201,6 +202,7 @@ namespace MinosMod.Modules.BaseStates
                     base.characterMotor.velocity = Vector3.zero;
                 }
             }
+            //logic ends here
 
             hitPauseTimer -= Time.deltaTime;
 

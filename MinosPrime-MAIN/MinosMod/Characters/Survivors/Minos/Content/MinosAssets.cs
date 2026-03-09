@@ -76,7 +76,7 @@ namespace MinosMod.Survivors.Minos
         private static void CreateBombProjectile()
         {
             //highly recommend setting up projectiles in editor, but this is a quick and dirty way to prototype if you want
-            bombProjectilePrefab = Asset.CloneProjectilePrefab("DaggerProjectile", "MicroMissileProjectile"); //property, id
+            bombProjectilePrefab = Asset.CloneProjectilePrefab("LunarNeedleProjectile", "MinosSnakeProjectile"); //property, id
             //daggerprojectile is a placeholder for now. contains correct homing properties for Minos's Snake, tho it freezes for a few ticks before chasing an enemy.
             //TODO: override and fix behavior
 
@@ -94,9 +94,7 @@ namespace MinosMod.Survivors.Minos
             bombImpactExplosion.impactEffect = bombExplosionEffect;
             bombImpactExplosion.lifetimeExpiredSound = Content.CreateAndAddNetworkSoundEventDef("MinosBombExplosion");
             bombImpactExplosion.timerAfterImpact = true;
-            bombImpactExplosion.lifetimeAfterImpact = 1f;
-
-            Debug.Log("MinosMod: Snake Projectile initialized using DaggerProjectile base.");
+            bombImpactExplosion.lifetimeAfterImpact = 0f;
 
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
 
@@ -104,10 +102,6 @@ namespace MinosMod.Survivors.Minos
             if (_assetBundle.LoadAsset<GameObject>("mdlMinosProjectileSnake") != null)
             {
                 bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("mdlMinosProjectileSnake");
-            }
-            else
-            {
-                Debug.LogError("MinosPrimeMod: Hm, could not find " + snakeModelName + " in AssetBundle.");
             }
             
             bombController.startSound = "";

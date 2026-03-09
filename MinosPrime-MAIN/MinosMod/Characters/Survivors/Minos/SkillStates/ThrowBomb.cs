@@ -14,6 +14,9 @@ namespace MinosMod.Survivors.Minos.SkillStates
 
         public static float DamageCoefficient = 16f;
 
+        private bool hasFiredProjectile = false;
+        public float firePercentTime = 0.6f; //x% thru the animation, logic is in FixedUpdate()
+
         public override void OnEnter()
         {
             projectilePrefab = MinosAssets.bombProjectilePrefab;
@@ -49,6 +52,22 @@ namespace MinosMod.Survivors.Minos.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+
+            float brakeTimeStartPercent = 0.05f;
+
+            if (!hasFiredProjectile && stopwatch >= this.duration * brakeTimeStartPercent)
+            {
+                if (base.isAuthority && base.characterMotor)
+                {
+                    base.characterMotor.velocity = Vector3.zero;
+                }
+            }
+
+            if (!hasFiredProjectile && stopwatch >= this.duration * firePercentTime)
+            {
+                this.FireProjectile();
+                hasFiredProjectile = true;
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

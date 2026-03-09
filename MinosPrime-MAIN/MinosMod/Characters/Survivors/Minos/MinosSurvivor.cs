@@ -223,7 +223,7 @@ namespace MinosMod.Survivors.Minos
             //it is also a SteppedSkillDef. Custom Skilldefs are very useful for custom behaviors related to casting a skill. see ror2's different skilldefs for reference
             SteppedSkillDef primarySkillDef1 = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
-                    "MinosSlash",
+                    "MinosPunch",
                     MINOS_PREFIX + "PRIMARYNAME",
                     MINOS_PREFIX + "PRIMARYDESC",
                     assetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
@@ -232,7 +232,7 @@ namespace MinosMod.Survivors.Minos
                     true
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            primarySkillDef1.stepCount = 3;
+            primarySkillDef1.stepCount = 4;
             primarySkillDef1.stepGraceDuration = 0.5f;
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);
@@ -254,7 +254,7 @@ namespace MinosMod.Survivors.Minos
                     true
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            secondarySkillDef1.stepCount = 2;
+            secondarySkillDef1.stepCount = 3;
             secondarySkillDef1.stepGraceDuration = 0.5f;
 
             Skills.AddSecondarySkills(bodyPrefab, secondarySkillDef1);

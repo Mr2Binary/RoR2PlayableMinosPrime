@@ -27,7 +27,7 @@ namespace MinosMod.Survivors.Minos
              + "< ! > Judgement is a devastatingly powerful utility with a high base cooldown. Feel the power at the press of a key. Have fun!" + Environment.NewLine + Environment.NewLine
              + "< ! > His Rider Kick / Ground Slam is a great way to ground yourself quickly (as long as you're within range) whilst also dealing good damage to enemies around you." + Environment.NewLine + Environment.NewLine;
 
-            string outro = "..and so he left, looking to build anew.";
+            string outro = "..and so he left this godforsakened land, looking to rebuild the City of Lust anew.";
             string outroFailure = "...The King could only ask for forgiveness from his children, as he failed to bring them salvation from this cold, dark world.";
 
             Language.Add(prefix + "NAME", "Minos Prime");
@@ -48,7 +48,7 @@ namespace MinosMod.Survivors.Minos
 
             #region Primary
             Language.Add(prefix + "PRIMARYNAME", "Prepare Thyself!");
-            Language.Add(prefix + "PRIMARYDESC", $"Minos Punches for <style=cIsDamage>{100f * MinosStaticValues.punchDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARYDESC", Tokens.agilePrefix + $"Minos Punches for <style=cIsDamage>{100f * MinosStaticValues.punchDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
@@ -58,12 +58,13 @@ namespace MinosMod.Survivors.Minos
 
             #region Utility
             Language.Add(prefix + "UTILITYNAME", "JUDGEMENT!");
-            Language.Add(prefix + "UTILITYDESC", Tokens.agilePrefix + $" Minos Prime blitzes across the battlefield, landing a dropkick that deals <style=cIsDamage>{10000f * MinosStaticValues.gunDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "UTILITYDESC", Tokens.agilePrefix + $" Minos Prime tucks himself and then blitzes across the battlefield, landing a devastating dropkick that deals <style=cIsDamage>{1000f * MinosStaticValues.gunDamageCoefficient}% damage</style> " +
+                $"in a large explosion through sheer force of will.");
             #endregion
 
             #region Special
-            Language.Add(prefix + "SPECIALNAME", "Rider Kick / Ground Slam");
-            Language.Add(prefix + "SPECIALDESC", Tokens.agilePrefix + $" While in midair, Minos strikes a pose and then rapidly slams either downwards or towards the location of the crosshair for <style=cIsDamage>{100f * MinosStaticValues.bombDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "SPECIALNAME", "Rider Kick | Ground Slam");
+            Language.Add(prefix + "SPECIALDESC", Tokens.agilePrefix + $" While in midair, Minos slams either downwards or towards the location of the crosshair for <style=cIsDamage>{100f * MinosStaticValues.bombDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Achievements
