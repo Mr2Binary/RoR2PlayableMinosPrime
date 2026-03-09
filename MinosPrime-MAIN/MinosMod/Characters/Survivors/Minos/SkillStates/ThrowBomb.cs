@@ -15,7 +15,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
         public static float DamageCoefficient = 16f;
 
         private bool hasFiredProjectile = false;
-        public float firePercentTime = 0.6f; //x% thru the animation, logic is in FixedUpdate()
+        public float firePercentTime = 0.8f; //x% thru the animation, logic is in FixedUpdate()
 
         public override void OnEnter()
         {
