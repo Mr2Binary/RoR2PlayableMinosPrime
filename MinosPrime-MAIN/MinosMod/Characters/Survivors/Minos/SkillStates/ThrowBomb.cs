@@ -40,6 +40,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             bloom = 10;
 
             base.OnEnter();
+            this.firedProjectile = true;
         }
 
         public override void ModifyProjectileInfo(ref FireProjectileInfo fireProjectileInfo)

@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 3345483428
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 119ec93c38925001fbcdec708e2b3ab4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_judgement2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_die.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_intro2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_hurt.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_prepare2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_weak.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_thyend.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_hurt2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_judgement.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_die2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_crush.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_intro.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_prepare.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_outro.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_thyend2.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_useless.ogg
+- Assets/ultrakill-minos-prime/Sounds/voice/mp_deathscream.ogg
+Dependencies: []

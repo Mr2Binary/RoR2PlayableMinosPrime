@@ -46,6 +46,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             string animationName = "Box" + (swingIndex + 1); //cycles thru animations Box1, 2 and 3
 
             PlayCrossfade("Combat, Override", animationName, playbackRateParam, duration, 0.05f);
+            if (swingIndex == 0) Util.PlaySound("mp_thyend", gameObject);
 
             Debug.Log("PlayableMinosPrime: Playing" + animationName + " at index " + swingIndex);
         }

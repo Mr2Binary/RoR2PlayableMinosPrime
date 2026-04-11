@@ -12,7 +12,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
         public static float initialSpeedCoefficient = 5f;
         public static float finalSpeedCoefficient = 2.5f;
 
-        public static string dodgeSoundString = "MinosRoll";
+        public static string dropkickSoundString = "mp_dropkick";
         public static float dodgeFOV = global::EntityStates.Commando.DodgeState.dodgeFOV;
 
         private float rollSpeed;
@@ -48,7 +48,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             previousPosition = transform.position - b;
 
             PlayAnimation("Combat, Override", "Dropkick", "Dropkick.playbackRate", duration);
-            Util.PlaySound(dodgeSoundString, gameObject);
+            Util.PlaySound(dropkickSoundString, gameObject);
 
             if (NetworkServer.active)
             {

@@ -186,7 +186,7 @@ namespace MinosMod.Modules.BaseStates
 
             //This is the logic for Minos's blink before attacking. The first attack of the combo has longer delay to play voicelines and be consistent with the animation.
             float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //45 -> % of the animation to start blink
-            float brakeTimePercent = blinkStartTimePercent + 0.15f;
+            float brakeTimePercent = blinkStartTimePercent + 0.1f;
 
             if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)
             {
