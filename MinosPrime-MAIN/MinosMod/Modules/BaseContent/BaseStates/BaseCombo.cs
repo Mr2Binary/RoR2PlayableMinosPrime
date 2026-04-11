@@ -1,4 +1,22 @@
-﻿//devnote: THIS IS UNUSED RIGHT NOW AS IM STILL FIGURING OUT THE TEMPLATE LOGIC. monkey brain.
+﻿//
+//
+//
+
+
+
+
+
+//devnote: THIS IS UNUSED RIGHT NOW AS IM STILL FIGURING OUT THE TEMPLATE LOGIC. monkey brain.
+
+
+
+
+
+
+//
+//
+//
+
 
 using EntityStates;
 using MinosMod.Modules.BaseStates;

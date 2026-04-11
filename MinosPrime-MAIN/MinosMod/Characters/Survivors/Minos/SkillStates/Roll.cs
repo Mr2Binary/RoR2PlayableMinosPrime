@@ -52,7 +52,6 @@ namespace MinosMod.Survivors.Minos.SkillStates
 
             if (NetworkServer.active)
             {
-                characterBody.AddTimedBuff(MinosBuffs.armorBuff, 3f * duration);
                 characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * duration);
             }
         }

@@ -42,8 +42,8 @@ namespace MinosMod.Survivors.Minos
             #endregion
 
             #region Passive
-            Language.Add(prefix + "PASSIVENAME", "WEAK.");
-            Language.Add(prefix + "PASSIVEDESC", $"Minos Prime becomes enraged below <style=isUtility>50%</style> Health. When below 35% Health, gain -2 seconds cooldown reduction.");
+            Language.Add(prefix + "PASSIVENAME", "Exponential Potential");
+            Language.Add(prefix + "PASSIVEDESC", $"<style=cIsUtility>Semicorporeal Acrobatics</style>: Minos Prime takes <style=cIsHealth>no fall damage</style>. \n<style=cIsUtility>Exponential Potential</style>: While below <style=cIsHealth>50% health</style>, gain <style=cIsDamage>35% increased stats</style>. Below <style=cIsHealth>20% health</style>, cooldowns are reduced.");
             #endregion
 
             #region Primary

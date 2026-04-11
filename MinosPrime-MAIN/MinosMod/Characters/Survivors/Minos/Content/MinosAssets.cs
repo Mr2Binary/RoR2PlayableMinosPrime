@@ -4,7 +4,7 @@ using UnityEngine;
 using MinosMod.Modules;
 using System;
 
-namespace MinosMod.Survivors.Minos
+namespace MinosMod.Survivors
 {
     public static class MinosAssets
     {

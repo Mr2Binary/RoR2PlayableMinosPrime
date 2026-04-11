@@ -122,6 +122,7 @@ namespace MinosMod.Survivors.Minos
         {
             AddHitboxes();
             bodyPrefab.AddComponent<MinosWeaponComponent>();
+            bodyPrefab.AddComponent<MinosPassiveComponent>();
             //bodyPrefab.AddComponent<HuntressTrackerComopnent>();
             //anything else here
         }
@@ -154,7 +155,7 @@ namespace MinosMod.Survivors.Minos
             //remove the genericskills from the commando body we cloned
             Skills.ClearGenericSkills(bodyPrefab);
             //add our own
-            //AddPassiveSkill();
+            AddPassiveSkill();
             AddPrimarySkills();
             AddSecondarySkills();
             AddUtiitySkills();
@@ -420,10 +421,16 @@ namespace MinosMod.Survivors.Minos
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
         {
-
-            if (sender.HasBuff(MinosBuffs.armorBuff))
+            if (sender && sender.HasBuff(MinosBuffs.enrageBuff))
             {
-                args.armorAdd += 300;
+                args.damageMultAdd += 0.35f;
+                args.attackSpeedMultAdd += 0.35f;
+                args.moveSpeedMultAdd += 0.35f;
+            }
+
+            if (sender && sender.HasBuff(MinosBuffs.enrageBuffEnhanced))
+            {
+                args.allSkills.cooldownMultAdd -= 0.2f;
             }
         }
     }
