@@ -268,12 +268,12 @@ namespace MinosMod.Survivors.Minos
             //here's a skilldef of a typical movement skill.
             SkillDef utilitySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "MinosRoll",
+                skillName = "MinosDropkick",
                 skillNameToken = MINOS_PREFIX + "UTILITYNAME",
                 skillDescriptionToken = MINOS_PREFIX + "UTILITYDESC",
                 skillIcon = assetBundle.LoadAsset<Sprite>("texUtilityIcon"),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(Roll)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(Dropkick)),
                 activationStateMachineName = "Body",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 

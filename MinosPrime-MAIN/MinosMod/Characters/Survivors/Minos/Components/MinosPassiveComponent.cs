@@ -26,7 +26,7 @@ namespace MinosMod.Survivors.Minos.Components
             float hpPercent = healthComponent.combinedHealthFraction;
 
             HandleBuffRequirement(hpPercent < 0.5f, MinosBuffs.enrageBuff);
-            HandleBuffRequirement(hpPercent < 0.2f, MinosBuffs.enrageBuffEnhanced);
+            HandleBuffRequirement(hpPercent < 0.25f, MinosBuffs.enrageBuffEnhanced);
         }
 
         private void HandleBuffRequirement(bool condition, BuffDef buff)
@@ -34,8 +34,14 @@ namespace MinosMod.Survivors.Minos.Components
             if (condition && !body.HasBuff(buff))
             {
                 body.AddBuff(buff);
-                if (buff == MinosBuffs.enrageBuff) Util.PlaySound("mp_useless", gameObject);
-                if (buff == MinosBuffs.enrageBuffEnhanced) Util.PlaySound("mp_weak", gameObject);
+                if (buff == MinosBuffs.enrageBuff) //is minos below 50% hp
+                {
+                    Util.PlaySound("mp_useless", gameObject);
+                }
+                if (buff == MinosBuffs.enrageBuffEnhanced) //is minos below 25% hp
+                {
+                    Util.PlaySound("mp_weak", gameObject);
+                }
             }
             else if (!condition && body.HasBuff(buff))
             {
@@ -55,10 +61,7 @@ namespace MinosMod.Survivors.Minos.Components
         //death sound.
         public void OnKilledServer(DamageReport damageReport)
         {
-            Util.PlaySound("mp_preparethyself", gameObject);
+            Util.PlaySound("mp_outro", gameObject);
         }
-
-        public static BuffDef enrageBuff;
-        public static BuffDef enrageBuffEnhanced;
     }
 }

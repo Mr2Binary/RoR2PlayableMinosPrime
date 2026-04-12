@@ -10,7 +10,7 @@ namespace MinosMod.Survivors.Minos
 
             Modules.Content.AddEntityState(typeof(KickCombo));
 
-            Modules.Content.AddEntityState(typeof(Roll));
+            Modules.Content.AddEntityState(typeof(Dropkick));
 
             Modules.Content.AddEntityState(typeof(ThrowBomb));
         }
