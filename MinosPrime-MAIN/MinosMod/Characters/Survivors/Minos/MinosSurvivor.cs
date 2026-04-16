@@ -130,7 +130,7 @@ namespace MinosMod.Survivors.Minos
         public void AddHitboxes()
         {
             //example of how to create a HitBoxGroup. see summary for more details
-            Prefabs.SetupHitBoxGroup(characterModelObject, "PunchGroup", "PunchHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "MeleeHitbox", "MeleeHitbox");
         }
 
         public override void InitializeEntityStateMachines() 

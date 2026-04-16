@@ -8,7 +8,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
     {
         public override void  OnEnter()
         {
-            hitboxGroupName = "KickGroup";
+            hitboxGroupName = "MeleeHitbox";
 
             damageType = DamageTypeCombo.GenericPrimary;
             damageCoefficient = MinosStaticValues.punchDamageCoefficient;

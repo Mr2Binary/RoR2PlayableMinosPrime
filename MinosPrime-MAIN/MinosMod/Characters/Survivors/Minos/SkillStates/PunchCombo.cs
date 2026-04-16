@@ -8,7 +8,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
     {
         public override void  OnEnter()
         {
-            hitboxGroupName = "PunchGroup";
+            hitboxGroupName = "MeleeHitbox";
 
             damageType = DamageTypeCombo.GenericPrimary;
             damageCoefficient = MinosStaticValues.punchDamageCoefficient;
@@ -47,6 +47,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
 
             PlayCrossfade("Combat, Override", animationName, playbackRateParam, duration, 0.05f);
             if (swingIndex == 0) Util.PlaySound("mp_thyend", gameObject);
+            if (swingIndex == 3) PlayAnimation("Combat, Override", "BoxUppercut", "Punch.playbackRate", duration);
 
             Debug.Log("PlayableMinosPrime: Playing" + animationName + " at index " + swingIndex);
         }

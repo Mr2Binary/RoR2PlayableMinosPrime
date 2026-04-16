@@ -1,11 +1,11 @@
 ManifestFileVersion: 0
-CRC: 3172899355
+CRC: 2697113012
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
+      Name: 1455b4dc619c5055c756cf52e43b61f2.bundle
+      Dependencies: {}
+    Info_1:
       Name: minosprimebundle
       Dependencies:
         Dependency_0: 1455b4dc619c5055c756cf52e43b61f2.bundle
-    Info_1:
-      Name: 1455b4dc619c5055c756cf52e43b61f2.bundle
-      Dependencies: {}

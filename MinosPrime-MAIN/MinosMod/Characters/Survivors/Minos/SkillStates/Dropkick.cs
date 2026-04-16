@@ -11,7 +11,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
         public static float duration = 2f;
         public static float delayPercent = 0.6f; //animation threshold to start the dash
         public static float brakePercent = 0.8f; //stopping midair
-        public static float blinkSpeed = 240f; //speed of blink
+        public static float blinkSpeed = 200f; //speed of blink
 
         private bool hasBlinked;
         private bool hasBraked;

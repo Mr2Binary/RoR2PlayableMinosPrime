@@ -13,17 +13,17 @@ namespace MinosMod.Modules.BaseStates
     {
         public int swingIndex;
 
-        protected string hitboxGroupName = "PunchGroup";
+        protected string hitboxGroupName = "MeleeHitbox";
 
         protected DamageTypeCombo damageType = DamageType.Generic;
         protected float damageCoefficient = 3.5f;
         protected float procCoefficient = 1f;
         protected float pushForce = 300f;
         protected Vector3 bonusForce = Vector3.zero;
+        
         protected float baseDuration = 1f;
-
-        protected float attackStartPercentTime = 0.2f;
-        protected float attackEndPercentTime = 0.4f;
+        protected float attackStartPercentTime = 0.6f;
+        protected float attackEndPercentTime = 0.8f;
 
         protected float earlyExitPercentTime = 0.4f;
 
