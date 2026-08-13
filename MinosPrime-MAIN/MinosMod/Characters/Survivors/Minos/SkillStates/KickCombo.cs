@@ -26,8 +26,8 @@ namespace MinosMod.Survivors.Minos.SkillStates
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 
-            swingSoundString = "";
-            hitSoundString = "";
+            swingSoundString = "mp_swing";
+            hitSoundString = "uk_hitsound";
             muzzleString = "";
             playbackRateParam = "Kick.playbackRate";
             swingEffectPrefab = MinosAssets.swordSwingEffect; //TODO: change

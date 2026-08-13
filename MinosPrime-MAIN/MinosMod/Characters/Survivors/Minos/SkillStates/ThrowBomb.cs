@@ -23,7 +23,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
             //base.effectPrefab = Modules.Assets.SomeMuzzleEffect;
             //targetmuzzle = "muzzleThrow"
 
-            attackSoundString = "MinosSnakeThrow";
+            attackSoundString = "mp_swing";
 
             baseDuration = BaseDuration;
             baseDelayBeforeFiringProjectile = BaseDelayDuration;

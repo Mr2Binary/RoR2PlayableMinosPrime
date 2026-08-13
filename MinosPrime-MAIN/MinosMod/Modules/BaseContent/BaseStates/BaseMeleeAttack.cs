@@ -12,7 +12,7 @@ namespace MinosMod.Modules.BaseStates
     public abstract class BaseMeleeAttack : BaseSkillState, SteppedSkillDef.IStepSetter
     {
         public int swingIndex;
-
+        
         protected string hitboxGroupName = "MeleeHitbox";
 
         protected DamageTypeCombo damageType = DamageType.Generic;
@@ -31,8 +31,8 @@ namespace MinosMod.Modules.BaseStates
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 4f;
 
-        protected string swingSoundString = "";
-        protected string hitSoundString = "";
+        protected string swingSoundString = "mp_swing";
+        protected string hitSoundString = "uk_hitsound";
         protected string muzzleString = "PunchCenter";
         protected string playbackRateParam = "Punch.playbackRate";
         protected GameObject swingEffectPrefab;
@@ -185,7 +185,7 @@ namespace MinosMod.Modules.BaseStates
             base.FixedUpdate();
 
             //This is the logic for Minos's blink before attacking. The first attack of the combo has longer delay to play voicelines and be consistent with the animation.
-            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //45 -> % of the animation to start blink
+            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //50 -> % of the animation to start blink
             float brakeTimePercent = blinkStartTimePercent + 0.1f;
 
             if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)

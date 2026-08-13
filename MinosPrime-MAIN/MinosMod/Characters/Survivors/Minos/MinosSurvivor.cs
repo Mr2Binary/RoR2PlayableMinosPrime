@@ -23,7 +23,7 @@ namespace MinosMod.Survivors.Minos
         public override string masterName => "MinosMonsterMaster"; //if you do not
 
         //the names of the prefabs you set up in unity that we will use to build your character
-        public override string modelPrefabName => "mdlMinos";
+        public override string modelPrefabName => "mdlMinosPrime";
         public override string displayPrefabName => "MinosDisplay";
 
         public const string MINOS_PREFIX = MinosPlugin.DEVELOPER_PREFIX + "_MINOS_";
@@ -53,21 +53,21 @@ namespace MinosMod.Survivors.Minos
 
         public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
         {
-                //new CustomRendererInfo
-                //{
-                //    childName = "MinosModel",
-                //    material = assetBundle.LoadMaterial("mp_body"),
-                //},
-                //new CustomRendererInfo
-                //{
-                //    childName = "MinosHeart",
-                //    material = assetBundle.LoadMaterial("mp_heart"),
-                //},
-                //new CustomRendererInfo
-                //{
-                //    childName = "MinosVeins",
-                //    material = assetBundle.LoadMaterial("mp_veins"),
-                //}
+                new CustomRendererInfo
+                {
+                    childName = "MinosModel",
+                    material = assetBundle.LoadMaterial("MinosPrimeBody"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "MinosHeart",
+                    material = assetBundle.LoadMaterial("MinosPrimeHeart"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "MinosVeins",
+                    material = assetBundle.LoadMaterial("MinosPrimeVeins"),
+                }
         };
 
         public override UnlockableDef characterUnlockableDef => MinosUnlockables.characterUnlockableDef;
