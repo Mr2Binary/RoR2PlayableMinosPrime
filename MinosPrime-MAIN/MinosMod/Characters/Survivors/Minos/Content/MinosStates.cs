@@ -12,7 +12,7 @@ namespace MinosMod.Survivors.Minos
 
             Modules.Content.AddEntityState(typeof(Dropkick));
 
-            Modules.Content.AddEntityState(typeof(ThrowBomb));
+            Modules.Content.AddEntityState(typeof(ThrowSnake));
         }
     }
 }

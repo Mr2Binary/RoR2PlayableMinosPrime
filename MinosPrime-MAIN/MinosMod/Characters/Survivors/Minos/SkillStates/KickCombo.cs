@@ -37,7 +37,7 @@ namespace MinosMod.Survivors.Minos.SkillStates
 
             if (this.swingIndex == 2)
             {
-                this.outer.SetNextState(new SkillStates.ThrowBomb());
+                this.outer.SetNextState(new SkillStates.ThrowSnake());
             }
 
             base.OnEnter();

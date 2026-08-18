@@ -56,17 +56,17 @@ namespace MinosMod.Survivors.Minos
                 new CustomRendererInfo
                 {
                     childName = "MinosModel",
-                    material = assetBundle.LoadMaterial("MinosPrimeBody"),
+                    material = assetBundle.LoadMaterial("MinosPrime_Body_001"),
                 },
                 new CustomRendererInfo
                 {
                     childName = "MinosHeart",
-                    material = assetBundle.LoadMaterial("MinosPrimeHeart"),
+                    material = assetBundle.LoadMaterial("MinosPrime_Heart_001"),
                 },
                 new CustomRendererInfo
                 {
                     childName = "MinosVeins",
-                    material = assetBundle.LoadMaterial("MinosPrimeVeins"),
+                    material = assetBundle.LoadMaterial("MinosPrime_Veins_001"),
                 }
         };
 
@@ -311,7 +311,7 @@ namespace MinosMod.Survivors.Minos
                 skillDescriptionToken = MINOS_PREFIX + "SPECIALDESC",
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSpecialIcon"),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowBomb)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowSnake)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
                 activationStateMachineName = "Weapon2", interruptPriority = EntityStates.InterruptPriority.Skill,
 
