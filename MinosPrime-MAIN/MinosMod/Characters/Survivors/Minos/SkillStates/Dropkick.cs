@@ -26,7 +26,6 @@ namespace MinosMod.Survivors.Minos.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            animator = GetModelAnimator();
 
             PlayAnimation("Combat, Override", "Dropkick", "Dropkick.playbackRate", duration);
             Util.PlaySound(dropkickSoundString, gameObject);

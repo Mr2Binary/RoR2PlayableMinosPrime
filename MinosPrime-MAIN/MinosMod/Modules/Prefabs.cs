@@ -8,6 +8,7 @@ using static RoR2.CharacterAI.AISkillDriver;
 using RoR2.Skills;
 using System;
 using System.Linq;
+using MinosMod.Characters.Survivors.Minos.Components;
 
 namespace MinosMod.Modules
 {
@@ -322,6 +323,7 @@ namespace MinosMod.Modules
             SetupAimAnimator(bodyPrefab, characterModel.gameObject);
             SetupFootstepController(characterModel.gameObject);
             SetupRagdoll(characterModel.gameObject);
+            SetupAnimationEvents(characterModel.gameObject);
 
             return characterModel;
         }
@@ -395,8 +397,8 @@ namespace MinosMod.Modules
             characterModel.baseRendererInfos = rendererInfos.ToArray();
         }
 
-        private static void SetupHurtboxGroup(GameObject bodyPrefab, GameObject model) 
-        {         
+        private static void SetupHurtboxGroup(GameObject bodyPrefab, GameObject model)
+        {
             SetupMainHurtboxesFromChildLocator(bodyPrefab, model);
 
             SetHurtboxesHealthComponents(bodyPrefab);
@@ -578,7 +580,7 @@ namespace MinosMod.Modules
             GameObject newMaster = assetBundle.LoadAsset<GameObject>(assetName);
 
             BaseAI baseAI = newMaster.GetComponent<BaseAI>();
-            if(baseAI == null)
+            if (baseAI == null)
             {
                 baseAI = newMaster.AddComponent<BaseAI>();
                 baseAI.aimVectorDampTime = 0.1f;
@@ -587,7 +589,7 @@ namespace MinosMod.Modules
             baseAI.scanState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.AI.Walker.Wander));
 
             EntityStateMachine stateMachine = newMaster.GetComponent<EntityStateMachine>();
-            if(stateMachine == null)
+            if (stateMachine == null)
             {
                 AddEntityStateMachine(newMaster, "AI", typeof(EntityStates.AI.Walker.Wander), typeof(EntityStates.AI.Walker.Wander));
             }
@@ -595,7 +597,7 @@ namespace MinosMod.Modules
             baseAI.stateMachine = stateMachine;
 
             CharacterMaster characterMaster = newMaster.GetComponent<CharacterMaster>();
-            if(characterMaster == null)
+            if (characterMaster == null)
             {
                 characterMaster = newMaster.AddComponent<CharacterMaster>();
             }
@@ -794,7 +796,7 @@ namespace MinosMod.Modules
                 hitBoxes.Add(hitBox);
             }
 
-            if(hitBoxes.Count == 0)
+            if (hitBoxes.Count == 0)
             {
                 Log.Error($"No hitboxes were set up. aborting setting up hitboxGroup for {hitBoxGroupName}");
                 return;
@@ -805,6 +807,12 @@ namespace MinosMod.Modules
             hitBoxGroup.hitBoxes = hitBoxes.ToArray();
 
             hitBoxGroup.groupName = hitBoxGroupName;
+        }
+
+        //trying something out here
+        public static void SetupAnimationEvents(GameObject model)
+        {
+            model.AddComponent<MinosAnimationEvents>();
         }
 
     }
