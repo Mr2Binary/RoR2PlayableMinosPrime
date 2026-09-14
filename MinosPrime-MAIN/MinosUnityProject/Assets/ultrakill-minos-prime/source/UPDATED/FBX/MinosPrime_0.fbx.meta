@@ -478,7 +478,7 @@ ModelImporter:
       takeName: Root|Root|Boxing|Animation Base Layer
       internalID: -6140398030313900219
       firstFrame: 0
-      lastFrame: 62
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -507,7 +507,7 @@ ModelImporter:
       takeName: Root|Root|Boxing|Animation Base Layer
       internalID: 1995991256027540859
       firstFrame: 62
-      lastFrame: 100
+      lastFrame: 93
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -535,7 +535,7 @@ ModelImporter:
       name: Root|Root|Box3|Animation Base Layer
       takeName: Root|Root|Boxing|Animation Base Layer
       internalID: -7751259693442469865
-      firstFrame: 100
+      firstFrame: 96
       lastFrame: 128
       wrapMode: 0
       orientationOffsetY: 0

@@ -14,13 +14,13 @@ namespace MinosMod.Survivors.Minos
     public class MinosSurvivor : SurvivorBase<MinosSurvivor>
     {
         //used to load the assetbundle for this character. must be unique
-        public override string assetBundleName => "minosprimebundle"; //if you do not change this, you are giving permission to deprecate the mod
+        public override string assetBundleName => "minosprimebundle";
 
         //the name of the prefab we will create. conventionally ending in "Body". must be unique
-        public override string bodyName => "MinosBody"; //if you do not change this, you get the point by now
+        public override string bodyName => "MinosBody";
 
         //name of the ai master for vengeance and goobo. must be unique
-        public override string masterName => "MinosMonsterMaster"; //if you do not
+        public override string masterName => "MinosMonsterMaster";
 
         //the names of the prefabs you set up in unity that we will use to build your character
         public override string modelPrefabName => "mdlMinosPrime";

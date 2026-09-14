@@ -22,8 +22,8 @@ namespace MinosMod.Modules.BaseStates
         protected Vector3 bonusForce = Vector3.zero;
         
         protected float baseDuration = 1f;
-        protected float attackStartPercentTime = 0.6f;
-        protected float attackEndPercentTime = 0.8f;
+        protected float attackStartPercentTime = 0.6f; //flag
+        protected float attackEndPercentTime = 0.8f; //flag
 
         protected float earlyExitPercentTime = 0.4f;
 
@@ -94,16 +94,15 @@ namespace MinosMod.Modules.BaseStates
 
         }
 
-        protected void Blink(float speedMultiplier) //the blink Minos does before attacking.
+        //short blink Minos does before attacking.
+        public virtual void Blink(float blinkSpeed)
         {
-            if (base.isAuthority && base.characterMotor && base.characterDirection)
+            if (isAuthority && characterMotor && characterDirection)
             {
-                base.characterMotor.velocity = Vector3.zero; //reset velocity to zero
+                characterMotor.velocity = Vector3.zero; //stops movement
 
-                Vector3 blinkVelocity = base.characterDirection.forward * speedMultiplier;
-                
-                base.characterMotor.velocity += blinkVelocity;
-                //this will continue on FixedUpdate();
+                Vector3 blinkVelocity = characterDirection.forward * blinkSpeed;
+                characterMotor.velocity = blinkVelocity;
             }
         }
 
@@ -184,25 +183,26 @@ namespace MinosMod.Modules.BaseStates
 
             base.FixedUpdate();
 
+            //update: this is going to be cleaned up soon as I've finally figured out AnimationEvent Hooking.
             //This is the logic for Minos's blink before attacking. The first attack of the combo has longer delay to play voicelines and be consistent with the animation.
-            float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //50 -> % of the animation to start blink
-            float brakeTimePercent = blinkStartTimePercent + 0.1f;
+                //float blinkStartTimePercent = (this.swingIndex == 0) ? 0.50f : 0.05f; //50 -> % of the animation to start blink
+                //float brakeTimePercent = blinkStartTimePercent + 0.1f;
 
-            if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)
-            {
-                Blink(70f);
-                hasBlinked = true;
-            }
+                //if (!hasBlinked && stopwatch >= this.duration * blinkStartTimePercent)
+                //{
+                //    Blink(70f);
+                //    hasBlinked = true;
+                //}
 
-            //continuation of blinking logic to brake
-            if (hasBlinked && stopwatch >= this.duration * brakeTimePercent)
-            {
-                if (base.isAuthority && base.characterMotor)
-                {
-                    base.characterMotor.velocity = Vector3.zero;
-                }
-            }
-            //logic ends here
+                ////continuation of blinking logic to brake
+                //if (hasBlinked && stopwatch >= this.duration * brakeTimePercent)
+                //{
+                //    if (base.isAuthority && base.characterMotor)
+                //    {
+                //        base.characterMotor.velocity = Vector3.zero;
+                //    }
+                //}
+                ////logic ends here
 
             hitPauseTimer -= Time.deltaTime;
 

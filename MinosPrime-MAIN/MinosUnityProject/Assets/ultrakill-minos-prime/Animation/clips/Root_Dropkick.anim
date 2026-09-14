@@ -47158,9 +47158,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.3833333
-    functionName: 
+    functionName: TriggerBlink
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 200
     intParameter: 0
     messageOptions: 0
